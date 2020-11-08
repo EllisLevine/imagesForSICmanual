@@ -12,8 +12,6 @@ The easiest way to install the SICvm is to download the compiled binaries in the
 
 1. If you do not already have it, download the latest version of Visual Studio and make sure the .NET Core framework and C# are selected during the install process. The community edition is free and will suffice for this project.
 
-![cloneimg](https://github.com/EllisLevine/imagesForSICmanual/blob/main/clone.PNG)
-
 2. Open up the Visual Studio application and select the "Clone a repository" button on the get started menu
 
 3. On the next screen it will prompt you for a Repository location. For this field simply copy and paste the link to this github page, https://github.com/ScottPiersall/SICVM. If you want you can change the local path which is the location on your computer where the files will be stored. After that is done click the button on the bottom of the screen titled "Clone".
@@ -29,9 +27,10 @@ If the installation instructions were done correctly you should be greeted with 
 
 ### Loading in your SIC program
 
-There are three ways you can load programs into memory in the SICvm and they can all be found in the File tab in the top left. The most common one we expect students to use is "Load and Assemble Sic Source File" which takes a .sic file, assembles it, and loads it into memory. If you have an object file you can also load those files by having their extension be .sic.obj. Finally, you can also load a SIC Machine state that you have saved previously.
+There are three ways you can load programs into memory in the SICvm and they can all be found in the File tab in the top left. The most common one we expect students to use is "Load and Assemble Sic Source File" which takes a .sic file, assembles it, and loads it into memory. If you have an object file you can also load those files by having their extension be .sic.obj. Finally, you can also load a SIC Machine state that you have saved previously with the "Load Saved SIC Machine State" option.
 
 ![loaded](https://github.com/EllisLevine/imagesForSICmanual/blob/main/loaded%20program.PNG)
+
 An example of a loaded in sic program.
 
 ### The Machine Tab
@@ -58,6 +57,7 @@ After a .sic file is loaded into memory you can step through the instructions to
 While you can always hard code values in your sic program for testing. As a systems programmer you might receive a problem where you have to get a value that is wired to a certain word in memory and you have to output it to a specified device. This can be tested on the SICvm by using the Set Memory options in the Machine tab. Select the  Set Memory Word in the machine tab and input the address in hex of the symbol you want to store, then input the value you want to store in the next section and click Ok.
 
 ![lastword](https://github.com/EllisLevine/imagesForSICmanual/blob/main/lastword.PNG)
+
 In this example, the program length is 84 and we are trying to put the value of "5" into the last word in memory which is program length minus three.
 
 ### Output 
@@ -65,6 +65,7 @@ In this example, the program length is 84 and we are trying to put the value of 
 Once your program is loaded in and you have set an input word in memory to the appropriate location you can step through the program and see what is doing with the memory and registers. If you wrote your SIC program to print to devices correctly (using the WD opcode) you should see your output appear on the Devices tab next to the specified device ID you are writing to. This will happen after stepping through the program enough to get to the address of the WD instruction.
 
 ![output](https://github.com/EllisLevine/imagesForSICmanual/blob/main/output.PNG)
+
 An example output of a program that converts seconds past midnight to 12 hour time and writes that output to device number 64.
 
 ### The "Run" Button
